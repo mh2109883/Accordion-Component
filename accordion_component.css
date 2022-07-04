@@ -1,0 +1,140 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url(https://wallpaperaccess.com/full/829012.jpg);
+    /*background-color: gray;*/
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+ 
+}
+
+.accordiontemplate{
+    width:400px;
+
+    background-color: rgb(122, 156, 168);
+    position: absolute;
+    top: 20%;
+    padding: 20px;
+    border-radius: 1rem;
+    box-shadow:2px 2px 4px rgb(0,0,0,0.7) ;
+
+}
+
+.titlebar{
+    
+    background-color:rgb(122, 156, 168) ;
+    border-radius: 25px;
+    
+}
+details summary{
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 25px;
+    color: #1e4959;   
+    font-size: 20px;
+    font: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    list-style: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    user-select: none; 
+}
+
+
+
+
+.panel{
+
+    background-color: rgb(43, 95, 95);
+    border-radius: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+    font-size:15px; ;
+    color: #aecad0;
+    font-family: cursive;
+
+}
+
+.panel1{
+    padding:10px 25px;
+}
+
+.panel2{
+    padding: 10px 25px;
+}
+
+.active, details summary:hover{
+    background-color: rgb(47, 128, 128);
+    color: rgb(255, 255, 255);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.active,.panel2:hover{
+
+    border-radius: 5px;
+    background-color: rgb(60, 118, 118);
+    transition: all 0.7s ease;
+    color: rgb(184, 243, 248);
+
+}
+
+.active,.panel1:hover{
+    
+    border-radius: 5px;
+    background-color: rgb(60, 118, 118);
+    transition: all 0.7s ease;
+    color: rgb(184, 243, 248);
+
+}
+.chevron::before, .chevron::after, .chev::before, .chev::after {
+    position: absolute;
+    content: "";
+    right: 40px;
+    top: -2.5rem;
+    height: 2px;
+    width: 10px;
+    border-radius: 2px;
+    background-color: #1e4959;
+    transition: transform .2s ease-in-out;
+}
+
+.chevron {
+    position: absolute;
+    right: 0;
+    transition: transform .2s ease-in-out;
+    color: white;
+}
+details[open] .chevron {
+    transform: translateY(-4px);
+    transition: transform .2s ease-in-out;
+}
+
+.chevron::before, .chev::after {
+    transform: rotate(45deg);
+}
+.chev::before, .chevron::after {
+    transform: translateX(7px) rotate(-45deg);
+}
+
+details[open] .chevron::before {
+    transform: rotate(45deg);
+}
+details[open] .chev::before {
+    transform: translateX(7px) rotate(-45deg);
+}
+
+details[open] .chevron::after {
+    transform: translateY(7px) rotate(-45deg);
+}
+details[open] .chev::after {
+    transform: translateY(7px) translateX(7px) rotate(45deg);
+}
+
